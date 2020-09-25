@@ -29,6 +29,7 @@
 
 $robotoR: "Roboto-Regular", sans-serif
 $helvLTP: "helveticaNeueLTProLt", sans-serif
+$helvLTPMD: "HelveticaNeueLTProMd", sans-serif
 $merryLI: "Merriweather-LightItalic", serif
 $monsR: "Monserrat-Regular", sans-serif
 
@@ -51,6 +52,8 @@ header
         display: flex
         justify-content: center
         align-items: center
+        & .active a
+            color: #010101
         &-item a
             font-family: $robotoR
             font-size: 13px
@@ -60,9 +63,11 @@ header
             letter-spacing: 0.04em
             color: #989696
             margin: 0 22px
-
-.active a
-    color: #010101
+            & img
+                transition: .2s
+            &:hover img
+                box-shadow: 0 0 5px #414141
+                
 
 .logo
     margin: 0 16px
@@ -103,6 +108,10 @@ header
     justify-content: center
     align-items: center
     margin: 0 auto 206px
+    transition: 0.2s
+    &:hover
+        box-shadow: 0 0 5px #414141
+        // transform: scale(1.01)
 
 .about-inner
     background: url(../img/buildings__black_3164.png) center 101% repeat-x, #1d1d1d
@@ -189,8 +198,11 @@ header
     color: #e4e4e4
     font-size: 20px
     transition: 0.2s
-    &:hover
+    & :in-range
+        transition: 0.2s
+    &:hover i
         color: #949494
+        transform: scale(1.1)
 .team__inner
     display: flex
     justify-content: space-around
@@ -245,13 +257,104 @@ header
     font-size: 80px
     margin-bottom: 43px
 
-.fas
+//  FORM & FOOTER
 
-.fa
-		&-chart
+.contact
+    padding-bottom: 95px
+    &__icon-box
+        max-width: 570px
+        display: flex
+        justify-content: space-between
+        margin: 0 auto
+    &__form
+        display: flex
+        flex-direction: column
+        max-width: 770px
+        margin: 0 auto
+        padding-top: 153px
+        & input
+            height: 52px
+            font-family: $helvLTP
+            font-size: 15px
+            font-weight: 400
+            letter-spacing: 0.02em
+            color: #898888
+            border: 1px solid #999999
+            text-align: center
+    &__name
+        margin-bottom: 20px
+    &__email
+        margin-bottom: 20px
+    &__number
+        margin-bottom: 18px
+    &__textarea
+        margin-bottom: 21px
+        height: 195px
+        resize: none
+        padding: 22px
+        font-family: $helvLTP
+        font-size: 15px
+        line-height: 26px
+        font-weight: 400
+        letter-spacing: 0.02em
+        color: #898888
+        border: 1px solid #999999
+    &__button
+        background-color: #161616
+        font-family: $helvLTPMD !important
+        font-size: 17px
+        color: #fefefe !important
+        border: none !important
+    &__item
+        text-align: center
+        width: 127px
+        & i
+            font-size: 21px
+            margin-bottom: 12px
+            color: #323232
+    &__text a
+        font-family: $helvLTP
+        font-size: 12px
+        font-weight: 400
+        letter-spacing: 0.02em
+        color: #898888
+        text-decoration: none
+        transition: .2s
+        &:hover
+            color: #323232
+            text-decoration: underline
 
-		&-heart
+input::-webkit-outer-spin-button
+input::-webkit-inner-spin-button
+    -webkit-appearance: none
+input[type='number']
+    -moz-appearance: textfield
 
-		&-cloud
+// 	&__inner
+// 	&__icon-box
+// 	&__item
+// 	&__text
+// 	&__form
+// 	&__name
+// 	&__email
+// 	&__number
+// 	&__textarea
+// 	&__button
+
+
+.footer
+    padding-top: 154px
+    font-family: $helvLTP
+    text-align: center
+    font-size: 14px
+    font-weight: 400
+    letter-spacing: 0.02em
+    color: #3b3b3b
+    &__text
+        margin-bottom: 30px
+
+
+
+
 
 
